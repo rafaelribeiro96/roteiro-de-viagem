@@ -1,0 +1,203 @@
+.travel-suggestion {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #cccccc00;
+  border-radius: 5px;
+  background-color: #1f292d00;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.title-chat-theme {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  color: #D0A933;
+}
+
+.input-travel-suggestion {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-travel-suggestion label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-days-travel {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 2px solid #cccccc3b;
+  margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+}
+
+
+.input-city-travel {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 2px solid #cccccc3b;
+  margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+}
+
+.input-obs-travel {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  border: 2px solid #cccccc3b;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  height: 100px; /* Defina a altura desejada em número de linhas ou em pixels */
+  resize: vertical; /* Permite redimensionar verticalmente */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical se o texto exceder a altura */
+}
+
+
+
+.div-chat-buttons-theme {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.travel-suggestion-content {
+  margin-top: 20px;
+}
+
+.travel-suggestion-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.travel-text-chat-theme {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.copy-button {
+  width: 25%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4B637A; /* Cor azul para os botões */
+  color: #fff; /* Cor branca para o texto dos botões */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #5b84aa; /* Cor azul mais escura ao passar o mouse */
+}
+
+/* Botão para compartilhar no WhatsApp */
+.whatsapp-button-share {
+  width: 25%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50; /* Cor verde para o botão do WhatsApp */
+  color: #fff; /* Cor branca para o texto dos botões */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button-share:hover {
+  background-color: #388e3c; /* Cor verde mais escura ao passar o mouse */
+}
+
+
+
+@media (max-width: 768px) {
+  .copy-button, .whatsapp-button-share {
+    width: 80%;
+  }
+
+  .share-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+
+.image-gallery {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  max-width: 600px; /* Ajuste o valor conforme necessário */
+  margin: 0 auto; /* Centraliza o grid na página */
+}
+
+@media (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 imagens por linha em telas maiores */
+  }
+}
+
+.image-container {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+.button-gerar-relatorio {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4B637A; /* Cor azul para o botão */
+  color: #fff; /* Cor branca para o texto do botão */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-gerar-relatorio:hover {
+  background-color: #5b84aa; /* Cor azul mais escura ao passar o mouse */
+}

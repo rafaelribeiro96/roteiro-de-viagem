@@ -1,0 +1,73 @@
+.highlighted-title {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.h1-highlighted {
+  color: #fff;
+  text-align: center;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: '500';
+  line-height: 114.4px;
+  margin-bottom: 30px;
+}
+
+.h1-highlighted-destaque {
+  color: #abadb3;
+  font-weight: '600';
+}
+
+.h1-highlighted-destaque-dourado {
+  color: #D0A933;
+  font-weight: '600';
+}
+
+.h2-highlighted {
+  color: #abadb3;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 42px;
+  margin-bottom: 30px;
+}
+
+.h2-highlighted-destaque {
+  color: white;
+  font-weight: '600';
+}
+
+/* Adicionado para tornar o componente responsivo */
+@media screen and (max-width: 768px) {
+  .highlighted-title {
+    margin-top: 50px;
+    width: 95%;
+  }
+
+  .h1-highlighted {
+    font-size: 44px;
+    line-height: 68.8px;
+    margin-bottom: 20px;
+  }
+
+  .h2-highlighted {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .h1-highlighted {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .h2-highlighted {
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+}
