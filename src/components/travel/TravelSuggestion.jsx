@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { IoIosCopy } from 'react-icons/io';
 
 const KEY_GPT = process.env.NEXT_PUBLIC_KEY_GPT;
 const KEY_GOOGLE = process.env.NEXT_PUBLIC_KEY_GOOGLE;
@@ -11,7 +13,7 @@ export default function TravelSuggestion() {
   const [travel, setTravel] = useState('');
   const [observacaoUsuario, setObservacaoUsuario] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [copyButtonText, setCopyButtonText] = useState('Copiar Roteiro');
+  /* const [copyButtonText, setCopyButtonText] = useState('Copiar Roteiro'); */
   const [images, setImages] = useState([]);
 
   async function fetchImages(query) {
@@ -60,7 +62,7 @@ export default function TravelSuggestion() {
           }
         ],
         temperature: 0.8,
-        max_tokens: 500,
+        max_tokens: 1000,
         top_p: 1
       })
     })
@@ -80,7 +82,7 @@ export default function TravelSuggestion() {
     try {
       const fetchedImages = await fetchImages(city);
       // Limitar as imagens a uma quantidade máxima de 6
-      const limitedImages = fetchedImages.slice(0, 6);
+      const limitedImages = fetchedImages.slice(0, 4);
       setImages(limitedImages);
     } catch (error) {
       console.error('Erro ao buscar imagens:', error);
@@ -89,10 +91,10 @@ export default function TravelSuggestion() {
 
   function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
-    setCopyButtonText('Copiado');
+    /*  setCopyButtonText('Copiado');
     setTimeout(() => {
       setCopyButtonText('Copiar Roteiro');
-    }, 2000); // Altere o tempo conforme desejado (em milissegundos)
+    }, 2000); // Altere o tempo conforme desejado (em milissegundos) */
   }
 
   return (
@@ -138,60 +140,69 @@ export default function TravelSuggestion() {
         </button>
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-      {travel && (
-        <div className="travel-suggestion-content">
-          <h4>Roteiro sugerido:</h4>
-          {travel.split('\n\n').map((paragraph, i) => (
-            <div key={i}>
-              <p className="travel-text-chat-theme">
-                {paragraph.split('\n').map((line, j) => (
-                  <span key={j}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </p>
-              <br />
-            </div>
-          ))}
-          <div className="share-buttons">
-            <button
-              className="copy-button"
-              onClick={() => copyToClipboard(travel)}
-            >
-              {copyButtonText}
-            </button>
-            <button
-              className="whatsapp-button-share"
-              onClick={() => {
-                const url = `whatsapp://send?text=${encodeURIComponent(
-                  travel
-                )}`;
-                window.open(url, '_blank');
-              }}
-            >
-              Compartilhar no WhatsApp
-            </button>
-          </div>
-        </div>
-      )}
-
-      {travel && images.length > 0 && (
-        <div className="image-gallery">
-          <h4>Imagens de {city}:</h4>
-          <div className="image-grid">
-            {images.map((imageUrl, index) => (
-              <div key={index} className="image-container">
-                <img
-                  src={imageUrl}
-                  alt={`Imagem ${index + 1}`}
-                  className="image"
-                />
+      <div className="travel-suggestion-container">
+        {travel && (
+          <div className="travel-suggestion-content">
+            <h4>Roteiro sugerido para {city}:</h4>
+            {travel.split('\n\n').map((paragraph, i) => (
+              <div key={i}>
+                <p className="travel-text-chat-theme">
+                  {paragraph.split('\n').map((line, j) => (
+                    <span key={j}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </p>
+                <br />
               </div>
             ))}
+            <div className="share-buttons">
+              <button
+                className="copy-button"
+                onClick={() => copyToClipboard(travel)}
+              >
+                {/* {copyButtonText} */}
+                <IoIosCopy />
+              </button>
+              <button
+                className="whatsapp-button-share"
+                onClick={() => {
+                  const url = `whatsapp://send?text=${encodeURIComponent(
+                    travel
+                  )}`;
+                  window.open(url, '_blank');
+                }}
+              >
+                <FaWhatsapp />
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+
+        {travel && images.length > 0 && (
+          <div className="image-gallery">
+            <h4>Imagens de {city}:</h4>
+
+            <div className="image-grid">
+              {images.map((imageUrl, index) => (
+                <div key={index} className="image-container">
+                  <img
+                    src={imageUrl}
+                    alt={`Imagem ${index + 1}`}
+                    className={`imageCity border-radius-${index + 1}`}
+                  />
+                </div>
+              ))}
+            </div>
+            <h6>
+              *As imagens são obtidas através de uma pesquisa automática no
+              Google. Por favor, note que a precisão das imagens pode variar
+              dependendo da busca realizada
+            </h6>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

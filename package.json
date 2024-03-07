@@ -22,7 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.12.0",
     "react-modal": "^3.16.1",
     "react-moment": "^1.1.3",
     "react-player": "^2.12.0",
@@ -31,12 +31,12 @@
     "sharp": "^0.32.3"
   },
   "devDependencies": {
-    "file-loader": "^6.2.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^5.0.0-canary-7118f5dd7-20230705",
+    "file-loader": "^6.2.0",
     "prettier": "^3.0.0"
   }
 }
