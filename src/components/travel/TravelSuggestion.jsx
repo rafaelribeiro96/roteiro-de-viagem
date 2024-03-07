@@ -43,7 +43,7 @@ export default function TravelSuggestion() {
     setLoading(true);
     setErrorMessage('');
 
-    const prompt = `Crie um roteiro para uma viagem de exatos ${days} dias na cidade(s), estado, país ou região de: "${city}", busque por lugares turísticos, lugares mais visitados, seja preciso nos dias de estadia fornecidos e limite o roteiro apenas na cidade fornecida. Forneça apenas em tópicos com nome do local onde ir em cada dia e diga o que há de interessante naquele lugar / atividade. Além de separar as atividades pelos turnos para uma maior dimensão de horário, como manhã, tarde e noite. Considere que o usuário irá se deslocar de um lugar para o outro e que o tempo de deslocamento deve ser considerado para o planejamento do roteiro. E no final da resposta, disponibilize observações que considere importante para aquela viagem do usuário para aquele local. Considere as seguintes observações sobre os gostos do usuário, no sentido do que ele gosta de fazer, observações para a viagem, etc: ${observacaoUsuario}.`;
+    const prompt = `Crie um roteiro para uma viagem de exatos ${days} dias na cidade(s), estado, país ou região de: "${city}", busque por lugares turísticos, lugares mais visitados, seja preciso nos dias de estadia fornecidos e limite o roteiro apenas na cidade fornecida. Forneça apenas em tópicos com nome do local onde ir em cada dia e diga o que há de interessante naquele lugar / atividade. Além de separar as atividades pelos turnos para uma maior dimensão de horário, como manhã, tarde e noite. Considere que o usuário irá se deslocar de um lugar para o outro e que o tempo de deslocamento deve ser considerado para o planejamento do roteiro. E no final da resposta, disponibilize observações que considere importante para aquela viagem do usuário para aquele local. Considere as seguintes observações sobre os gostos do usuário, no sentido do que ele gosta de fazer, observações para a viagem, limitações de datas, etc: ${observacaoUsuario}.`;
 
     fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -116,8 +116,6 @@ export default function TravelSuggestion() {
           value={days}
           onChange={(e) => setDays(e.target.value)}
         />
-      </div>
-      <div className="input-travel-suggestion">
         <label htmlFor="observacaoUsuario">
           Observações de gostos, desejos, etc:
         </label>
@@ -129,6 +127,7 @@ export default function TravelSuggestion() {
           onChange={(e) => setObservacaoUsuario(e.target.value)}
         />
       </div>
+
       <div className="div-chat-buttons-theme">
         <button
           className="button-gerar-relatorio"

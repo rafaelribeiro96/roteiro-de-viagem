@@ -1,8 +1,8 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "DM Sans", sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -12,11 +12,10 @@ a {
 }
 
 .container {
-  width: 1400px;
   max-width: 100%;
   height: 100%;
   margin: auto;
-  background-color: #0A0C11;
+  background-color: #101f06;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +24,7 @@ a {
 
 body {
   background-color: #0A0C11;
-  font-family: 'Poppins', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .border__red {
@@ -71,6 +70,16 @@ color: black;
 /* #3F292B */
 /* #E63946 */
 
+
+
+
+
+/* #238C82
+#22400D
+#537322
+#678C30
+#D98D62
+ */
 :root {
 --color-1: #2a2c31;
 --color-2: #B3C5D7;
@@ -112,12 +121,12 @@ scroll-behavior: smooth;
 }
 
 p {
-font-family: 'Poppins', sans-serif;
+font-family: "DM Sans", sans-serif;
 color: #ABADB3;
 }
 
 h1, h2, h3, h4, h5, h6 {
-font-family: 'Poppins', sans-serif;
+font-family: "DM Sans", sans-serif;
 }
 
 
@@ -141,11 +150,11 @@ font-family: 'Poppins', sans-serif;
 }
 
 #travel {
-  width: 100vw;
+  width: 100%;
 }
 
 #banner {
-  width: 99vw;
+  width: 100%;
 }
 
 .arrow-up {
@@ -177,9 +186,9 @@ font-family: 'Poppins', sans-serif;
   opacity: 0.7;
 }
 @media (max-width: 768px) {
-  * {
+  /* * {
     margin: 0 1px;
-  }
+  } */
 
   .show-up-button {
     left: 45%;

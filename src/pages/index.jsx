@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import uparrow from '../assets/images/up-arrow.svg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Header from '../components/Header/Header';
 import HighlightedTitle from '../components/TituloDestacado/HighlightedTitle';
-import Video from '../components/Video/Video';
 import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
 import { Analytics } from '@vercel/analytics/react';
@@ -49,17 +47,17 @@ const Main = () => {
         <title>Roteiro Feito - Sua Viagem Planejada</title>
       </Head>
       <div className="container">
-        <div id="header" data-aos="fade-right">
+        {/* <div id="header" data-aos="fade-right">
           <Header />
-        </div>
+        </div> */}
         <HighlightedTitle />
-        <div id="video" data-aos="fade-up">
+        {/* <div id="video" data-aos="fade-up">
           <Video />
-        </div>
+        </div> */}
         <div id="travel" /* data-aos="fade-up" */>
           <TravelSuggestion />
         </div>
-        <div id="banner" data-aos="fade-up">
+        <div id="banner" /* data-aos="fade-up" */>
           <Banner />
         </div>
         <div id="footer">

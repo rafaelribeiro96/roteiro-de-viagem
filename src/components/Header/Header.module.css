@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0 10px;
   margin-bottom: 50px;
   width: 100%;
   box-sizing: border-box;
@@ -24,13 +24,14 @@
 
 .logo-header-img {
   margin-top: 5px;
-  width: 50%;
+  width: 60%;
   height: auto;
 }
 
 .subtitle-header {
-  color: #abadb3;
-  font-size: 14px;
+  color: #fff;
+  /* color: #678C30; */
+  font-size: 18px;
   font-style: normal;
   font-weight: '300';
   line-height: 21px;
@@ -40,6 +41,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 10%;
 }
 
 .icon-header {
@@ -49,6 +51,7 @@
 
 .link-header {
   color: white;
+  /* color: #678C30; */
   text-decoration: underline;
   font-weight: 600;
 }
@@ -59,12 +62,15 @@
     flex-direction: column;
     text-align: center;
     padding: 10px 0;
-    height: 100px;
   }
 
   .logo-header-img {
-    width: 70%;
+    width: 90%;
     height: auto;
+  }
+
+  .right-section-header {
+    margin-right: 0;
   }
 
   .subtitle-header {
